@@ -1,0 +1,24 @@
+import turtle, time
+
+pen = turtle.Turtle()
+
+def starFILL(n, dlina):
+    pen.begin_fill()
+    star(n,dlina)
+    pen.end_fill()
+
+def star(n, dlina):
+    if n % 2 != 0:
+        for i in range(n):
+            pen.forward(dlina)
+            angle = n // 2 * 360 / n
+            pen.left(angle)
+
+def interface():
+    for i in range(5, 16, 2):
+        pen.speed(10)
+        starFILL(i, 150)
+        time.sleep(1)
+        pen.reset()
+
+interface()
